@@ -2,23 +2,17 @@ package com.example.gotapp.ui
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.gotapp.R
 import com.example.gotapp.databinding.ViewHouseItemBinding
 import com.example.gotapp.domain.model.House
 import com.example.gotapp.ui.DetailActivity.Companion.EXTRA_HOUSE
-import kotlinx.android.synthetic.main.view_house_item.view.*
-
 
 class HousesAdapter : ListAdapter<House, HousesAdapter.HouseItemViewHolder>(Companion) {
 
-    companion object: DiffUtil.ItemCallback<House>() {
+    companion object : DiffUtil.ItemCallback<House>() {
         override fun areItemsTheSame(oldItem: House, newItem: House): Boolean {
             return false
         }
@@ -47,5 +41,6 @@ class HousesAdapter : ListAdapter<House, HousesAdapter.HouseItemViewHolder>(Comp
         }
     }
 
-    inner class HouseItemViewHolder(val binding: ViewHouseItemBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class HouseItemViewHolder(val binding: ViewHouseItemBinding) :
+        RecyclerView.ViewHolder(binding.root)
 }

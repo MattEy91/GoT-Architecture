@@ -15,7 +15,9 @@ class MainActivityViewModel(
 ) : ViewModel() {
 
     val allHouses = MutableLiveData<List<House>>()
-    val headerUrl = MutableLiveData<String>().apply { value = "https://www.sky.at/static/img/serienhighlights/sky_16-03_gameofthrones-uebersicht_sub_s.jpg" }
+    val headerUrl = MutableLiveData<String>().apply {
+        value = "https://www.sky.at/static/img/serienhighlights/sky_16-03_gameofthrones-uebersicht_sub_s.jpg"
+    }
 
     init {
         getAllHouses()

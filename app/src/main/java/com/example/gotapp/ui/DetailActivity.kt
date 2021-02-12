@@ -2,16 +2,12 @@ package com.example.gotapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gotapp.R
 import com.example.gotapp.databinding.ActivityDetailBinding
-import com.example.gotapp.databinding.ActivityMainBinding
 import com.example.gotapp.domain.model.House
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -24,10 +20,11 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        DataBindingUtil.setContentView<ActivityDetailBinding>(this, R.layout.activity_detail).apply {
-            lifecycleOwner = this@DetailActivity
-            viewModel = detailViewModel
-        }
+        DataBindingUtil.setContentView<ActivityDetailBinding>(this, R.layout.activity_detail)
+            .apply {
+                lifecycleOwner = this@DetailActivity
+                viewModel = detailViewModel
+            }
 
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -42,7 +39,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             android.R.id.home -> onBackPressed()
         }
         return super.onOptionsItemSelected(item)

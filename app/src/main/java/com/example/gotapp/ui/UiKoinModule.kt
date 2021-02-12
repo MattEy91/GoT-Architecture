@@ -10,5 +10,5 @@ val uiModule = module {
         MainActivityViewModel(get())
     }
 
-    viewModel { (house: House) ->  DetailActivityViewModel(house) }
+    viewModel { (house: House) -> DetailActivityViewModel(house) }
 }
