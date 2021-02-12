@@ -1,0 +1,81 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="house"
+            type="com.example.gotapp.domain.model.House" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/double_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/got"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/double_margin"
+            android:ellipsize="end"
+            android:text="@{house.name}"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_region"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="TestTestTest" />
+
+        <TextView
+            android:id="@+id/tv_region"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/double_margin"
+            android:ellipsize="end"
+            android:text="@{house.region}"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_coatOfArms"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="TestTestTest" />
+
+        <TextView
+            android:id="@+id/tv_coatOfArms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/double_margin"
+            android:layout_marginEnd="@dimen/double_margin"
+            android:ellipsize="end"
+            android:lines="3"
+            android:minWidth="230dp"
+            android:text="@{house.coatOfArms}"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_region"
+            tools:text="TestTestTest" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
